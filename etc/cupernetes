@@ -1,0 +1,48 @@
+#!/bin/bash
+###############################################################################
+# Copyright © 2021 Kris Nóva <kris@nivenly.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http:#www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+###############################################################################
+#                                          _            
+#     ___ _   _ _ __   ___ _ __ _ __   ___| |_ ___  ___ 
+#    / __| | | | '_ \ / _ \ '__| '_ \ / _ \ __/ _ \/ __|
+#   | (__| |_| | |_) |  __/ |  | | | |  __/ ||  __/\__ \
+#    \___|\__,_| .__/ \___|_|  |_| |_|\___|\__\___||___/
+#              |_|                                      
+#
+set -e
+version="1.0.0"
+echo "                                        _"
+echo "   ___ _   _ _ __   ___ _ __ _ __   ___| |_ ___  ___ "
+echo "  / __| | | | '_ \ / _ \ '__| '_ \ / _ \ __/ _ \/ __|"
+echo " | (__| |_| | |_) |  __/ |  | | | |  __/ ||  __/\__ \\"
+echo "  \___|\__,_| .__/ \___|_|  |_| |_|\___|\__\___||___/"
+echo "            |_|                                      "
+echo "                version: ${version}      "
+echo "                author : kris nóva       "
+echo "                bugs   : kris@nivenly.com"
+echo
+#   Usage: cupsd [options]
+#   Options:
+#     -c cupsd.conf           Set cupsd.conf file to use.
+#     -f                      Run in the foreground.
+#     -F                      Run in the foreground but detach from console.
+#     -h                      Show this usage message.
+#     -l                      Run cupsd on demand.
+#     -s cupernetes-files.conf      Set cupernetes-files.conf file to use.
+#     -t                      Test the configuration file.
+cupsd \
+  -c /etc/cups/cupsd.conf \
+  -F &
+tail -F /var/log/cups/error_log

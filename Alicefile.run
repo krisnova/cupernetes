@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run -p 631:631 krisnova/cupernetes:latest
