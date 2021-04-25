@@ -1,0 +1,16 @@
+#!/bin/sh
+
+_cups_path1=/usr/share/ppd
+_cups_path2=/usr/share/cups/model
+ppd_files="canong3000.ppd canone200.ppd canonmg7700.ppd canonib4100.ppd canonts200.ppd canonmb2700.ppd canone480.ppd canonmb5400.ppd canonxk50.ppd canonts9180.ppd canonmb5000.ppd canonmg6600.ppd canonmb2300.ppd canone3100.ppd canonts6130.ppd canontr8580.ppd canonmb5300.ppd canontr7530.ppd canonmg5700.ppd canonmb5100.ppd canone470.ppd canonts6000.ppd canontr7500.ppd canonib4000.ppd canonmb2000.ppd canonts8000.ppd canonts8100.ppd canonts3100.ppd canonmg6800.ppd canontr8530.ppd canonip110.ppd canonmg2900.ppd canonts5100.ppd canonts9100.ppd canonts6180.ppd canonmg3600.ppd canonts5000.ppd canonts6100.ppd canone300.ppd canonmb2100.ppd canonxk70.ppd canonmg7500.ppd canone460.ppd canontr8500.ppd canonmg5600.ppd canonmg6900.ppd canong4000.ppd canonmx490.ppd canonts9000.ppd canonts300.ppd canonmg3000.ppd canonts8130.ppd canonts8180.ppd "
+
+if [ -x /sbin/ldconfig ]; then
+	/sbin/ldconfig
+fi
+# make symbolic link for ppd
+if [ ! -d ${_cups_path2} ]; then
+	mkdir ${_cups_path2}
+fi
+for f in ${ppd_files}; do
+	ln -fs ${_cups_path1}/${f} ${_cups_path2}/${f}
+done

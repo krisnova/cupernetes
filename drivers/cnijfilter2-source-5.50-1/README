@@ -1,0 +1,11 @@
+How to build rpm:
+=================
+    * When you build one printer driver package.
+    --------------------------------------------
+    $ rpmbuild -tb cnijfilter-source-X.XX-Y.tar.gz
+
+Example:
+========
+    * Example for Ver.5.00 package:
+	----------------------------------
+    $ rpmbuild -tb cnijfilter-source-5.00-1.tar.gz

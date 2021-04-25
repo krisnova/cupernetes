@@ -1,0 +1,11 @@
+cmdtocanonij3     --- CUPS filter for Canon Inkjet Printer.
+
+DESCRIPTION
+    The "cmdtocanonij3" is the CUPS filter program converting the CUPS command
+    file to the Canon Inkjet Printer command stream.
+
+REQUIREMENTS
+    None
+    
+INSTALLATION
+    See the file "INSTALL"
